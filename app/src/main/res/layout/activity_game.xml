@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/game_bg" >
+    <LinearLayout
+        android:id="@+id/game_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_size"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center_vertical"
+        android:background="@mipmap/layout_bottom" >
+        <Button
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:onClick="onPause"
+            android:background="@drawable/btn_back" />
+        <TextView
+            android:text="@string/txt_score"
+            android:layout_weight="0.3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/txt_score"
+            android:text="0"
+            android:layout_weight="1.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <TextView
+            android:text="@string/txt_line"
+            android:layout_weight="0.3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/txt_line"
+            android:text="0"
+            android:layout_weight="1.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <ImageView
+            android:id="@+id/next_ico"
+            android:layout_width="@dimen/btn_size"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/game_btns"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_size"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/layout_bottom" >
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btn_left"
+                android:onClick="onLeftMove"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_move"
+                android:rotation="180" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btn_right"
+                android:onClick="onRightMove"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_move" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btn_down"
+                android:onClick="onDownMove"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_move"
+                android:rotation="90"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btn_rotate"
+                android:onClick="onRotate"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_rotate" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <wjy.tetris.base.GameCanvas
+        android:id="@+id/game_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/game_btns"
+        android:layout_below="@id/game_info" />
+</RelativeLayout>

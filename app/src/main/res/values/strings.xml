@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">俄罗斯方块</string>
+
+    <string name="play_game">开始游戏</string>
+    <string name="continue_game">继续游戏</string>
+
+    <string name="speed">速度</string>
+
+    <string name="txt_score">分数</string>
+    <string name="txt_line">消行</string>
+
+    <string name="txt_resume">继续</string>
+    <string name="txt_main">主菜单</string>
+</resources>
